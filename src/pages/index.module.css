@@ -1,0 +1,19 @@
+.container section + section {
+  padding-top: 50px;
+}
+
+.container .movie_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 20px;
+}
+
+.container .movie_list.recommend a {
+  width: calc((100% - 8px * 2) / 3);
+  line-height: 0;
+}
+.container .movie_list.all a {
+  width: calc((100% - 8px * 4) / 5);
+  line-height: 0;
+}
