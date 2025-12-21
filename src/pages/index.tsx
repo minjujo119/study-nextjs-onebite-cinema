@@ -1,7 +1,14 @@
+import SearchLayout from "@/component/search-layout";
+import { ReactNode } from "react";
+
 export default function Home() {
   return (
-    <>
-      <h1>ONEBITE CINEMA</h1>
-    </>
+    <div>
+      <h2>한입 시네마 Home</h2>
+    </div>
   );
 }
+
+Home.getLayout = (page: ReactNode) => {
+  return <SearchLayout>{page}</SearchLayout>;
+};
