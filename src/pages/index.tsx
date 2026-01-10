@@ -4,9 +4,9 @@ import MovieItem from "@/component/movie-item";
 import style from "./index.module.css";
 import fetchAllMovies from "@/lib/fetch-all-movies";
 import fetchRecommendMovies from "@/lib/fetch-recommend-movie";
-import { InferGetServerSidePropsType } from "next";
+import { InferGetStaticPropsType } from "next";
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const [allMovies, recommendMovies] = await Promise.all([
     fetchAllMovies(),
     fetchRecommendMovies(),
@@ -20,7 +20,7 @@ export const getServerSideProps = async () => {
 export default function Home({
   allMovies,
   recommendMovies,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div className={style.container}>
       <section>
