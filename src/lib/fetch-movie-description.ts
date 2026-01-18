@@ -1,9 +1,10 @@
 import { MovieData } from "@/types";
+import { API_URL } from "./fetch-url";
 
 export default async function fetchMovieDescription(
-  id: number
+  id: number,
 ): Promise<MovieData | null> {
-  const url = `http://localhost:12345/movie/${id}`;
+  const url = `${API_URL}/movie/${id}`;
 
   try {
     const response = await fetch(url);

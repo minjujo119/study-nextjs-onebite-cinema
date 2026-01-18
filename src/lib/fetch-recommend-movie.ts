@@ -1,7 +1,8 @@
 import { MovieData } from "@/types";
+import { API_URL } from "./fetch-url";
 
 export default async function fetchRecommendMovies(): Promise<MovieData[]> {
-  const url = `http://localhost:12345/movie/random`;
+  const url = `${API_URL}/movie/random`;
 
   try {
     const response = await fetch(url);
